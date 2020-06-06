@@ -1,3 +1,5 @@
+Adapted from https://gitlab.pavlovia.org/demos/stroop
+==========================================================
 Stroop - measuring reaction times to incongruent stimuli
 ==========================================================
 
