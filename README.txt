@@ -1,39 +1,32 @@
-Adapted from https://gitlab.pavlovia.org/demos/stroop
-==========================================================
-Stroop - measuring reaction times to incongruent stimuli
-==========================================================
+Stroop Extended - a better implementation of the Stroop task
+------------------------------------------------------------------
 
-The experiment
---------------------
+The experiment: 
+    
+    The experiment is much like that in the Stroop demo (with some minor changes
+    to the trial list file and to timing).
+    
+    What differs is that there are now practice trials, with feedback provided.
+    There is also a 'reverseStroop' version of the experiment, whereby subjects
+    must report the colour spelled out by the word, instead of the letter colour
+    used in the normal Stroop effect.
 
-In this task subjects must report the colour of the letters spelling each
-word, but letters themselves also spell a colour name and this may be the
-same or different to the colour of the letters. Stroop (1935) reports that
-reaction times are slower the letters spell a colour that is incongruent
-with the colour of the letters, indicating a compulsory automated reading of
-the word.
+Analysing your data:
 
-Analysing your data
---------------------
+    Exactly as with the Stroop demo, except that, because there are two loops in
+    the flow (for practice trials and main trials) there are now two worksheets
+    in the Excel document.
 
-After you run the study, look in the data/ folder next to where the
-experiment was saved. There will be an xlsx file there that can be opened
-with Microsoft Excel or similar spreadsheet package. Each row represents
-one condition (trial type) and each column is one variable of your experiment
-or type of data collected.
-Take the average of the resp.mean_rt column for the 3 congruent conditions
-and compare them with the 3 incongruent conditions. In most cases the
-incongruent conditions will have larger reactions times.
-
-Notes
---------------------
-
-This version of the Stroop effect is a very simple experiment, good for
-explaining how the PsychoPy Builder interface works with minimal clutter.
-You could (as a challenge) add practice trials and feedback if you liked...
-or you could go to the StroopExtended demo and see how to do it there!
-
-References
---------------------
-
-Stroop, J. R. (1935). Studies of interference in serial verbal reactions. Journal of Experimental Psychology, 18(6), 643-662.
+Notes: 
+    
+    This version demonstrates more of the flexibility of PsychoPy. You can have
+    multiple loops and they can span multiple Routines. A single Routine (e.g.
+    trial) can be included in multiple places in the Flow, but beware that the
+    trial list will need to have the same entries.
+    
+    Also have a look at the 'feedback' Routine. This is a little more involved
+    than some other Routines because it does require a Code Component containing
+    python scripting code. But the *good news* is that this Routine can be 
+    copied and pasted to other experiments (see the Experiment menu) 
+    and will work in most cases where the keyboard has been used with 'store 
+    correct answer' turned on.

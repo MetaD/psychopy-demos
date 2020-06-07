@@ -26,7 +26,7 @@
     <Param name="blendMode" updates="None" val="avg" valType="str"/>
     <Param name="color" updates="None" val="black" valType="str"/>
     <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
-    <Param name="expName" updates="None" val="stroop" valType="str"/>
+    <Param name="expName" updates="None" val="stroopReverse" valType="str"/>
     <Param name="exportHTML" updates="None" val="on Sync" valType="str"/>
     <Param name="logging level" updates="None" val="warning" valType="code"/>
   </Settings>
@@ -88,7 +88,7 @@
         <Param name="startVal" updates="None" val="0" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="text" updates="constant" val="OK. Ready for the real thing?&amp;#10;&amp;#10;Remember, ignore the word itself; press:&amp;#10;Left for red LETTERS&amp;#10;Down for green LETTERS&amp;#10;Right for blue LETTERS&amp;#10;(Esc will quit)&amp;#10;&amp;#10;Press any key to continue" valType="str"/>
+        <Param name="text" updates="constant" val="OK. Ready for the real thing?&amp;#10;&amp;#10;Remember, don't worry about the letter colour, read the WORD. Press:&amp;#10;Left for the WORD 'red'&amp;#10;Down for the WORD 'green'&amp;#10;Right for the WORD 'blue'&amp;#10;&amp;#10;Press any key to continue" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
@@ -127,7 +127,7 @@
         <Param name="startVal" updates="None" val="0.0" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="text" updates="constant" val="Please press;&amp;#10;Left for red LETTERS&amp;#10;Down for green LETTERS&amp;#10;Right for blue LETTERS&amp;#10;(Esc will quit)&amp;#10;&amp;#10;Let's start with a few practice trials&amp;#10;&amp;#10;Press any key to continue" valType="str"/>
+        <Param name="text" updates="constant" val="Don't worry about the colour of the letters now. Please press:&amp;#10;Left for the WORD 'red'&amp;#10;Down for the WORD 'green'&amp;#10;Right for the WORD 'blue'&amp;#10;&amp;#10;Let's start with a few practice trials&amp;#10;&amp;#10;Press any key to continue" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
@@ -147,29 +147,6 @@
         <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
         <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
       </KeyboardComponent>
-    </Routine>
-    <Routine name="thanks">
-      <TextComponent name="thanksText">
-        <Param name="color" updates="constant" val="$[1, 1, 1]" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
-        <Param name="name" updates="constant" val="thanksText" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2.0" valType="code"/>
-        <Param name="text" updates="constant" val="This is the end of the experiment.&amp;#10;&amp;#10;Thanks!" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
     </Routine>
     <Routine name="feedback">
       <CodeComponent name="message">
@@ -208,13 +185,36 @@
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
     </Routine>
+    <Routine name="thanks">
+      <TextComponent name="thanksText">
+        <Param name="color" updates="constant" val="$[1, 1, 1]" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="constant" val="thanksText" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="2.0" valType="code"/>
+        <Param name="text" updates="constant" val="This is the end of the experiment.&amp;#10;&amp;#10;Thanks!" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
   </Routines>
   <Flow>
     <Routine name="instructPractice"/>
     <LoopInitiator loopType="TrialHandler" name="practice">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[{u'text': u'red', u'congruent': u'cong', u'corrAns': u'left', u'letterColor': u'red'}, {u'text': u'red', u'congruent': u'cong', u'corrAns': u'left', u'letterColor': u'red'}, {u'text': u'red', u'congruent': u'incong', u'corrAns': u'down', u'letterColor': u'green'}, {u'text': u'red', u'congruent': u'incong', u'corrAns': u'right', u'letterColor': u'blue'}, {u'text': u'green', u'congruent': u'incong', u'corrAns': u'left', u'letterColor': u'red'}, {u'text': u'green', u'congruent': u'cong', u'corrAns': u'down', u'letterColor': u'green'}, {u'text': u'green', u'congruent': u'cong', u'corrAns': u'down', u'letterColor': u'green'}, {u'text': u'green', u'congruent': u'incong', u'corrAns': u'right', u'letterColor': u'blue'}, {u'text': u'blue', u'congruent': u'incong', u'corrAns': u'left', u'letterColor': u'red'}, {u'text': u'blue', u'congruent': u'incong', u'corrAns': u'down', u'letterColor': u'green'}, {u'text': u'blue', u'congruent': u'cong', u'corrAns': u'right', u'letterColor': u'blue'}, {u'text': u'blue', u'congruent': u'cong', u'corrAns': u'right', u'letterColor': u'blue'}]" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="trialTypes.xlsx" valType="str"/>
+      <Param name="conditions" updates="None" val="[{u'text': u'red', u'congruent': u'cong', u'corrAns': u'left', u'letterColor': u'red'}, {u'text': u'red', u'congruent': u'cong', u'corrAns': u'left', u'letterColor': u'red'}, {u'text': u'red', u'congruent': u'incong', u'corrAns': u'left', u'letterColor': u'green'}, {u'text': u'red', u'congruent': u'incong', u'corrAns': u'left', u'letterColor': u'blue'}, {u'text': u'green', u'congruent': u'incong', u'corrAns': u'down', u'letterColor': u'red'}, {u'text': u'green', u'congruent': u'cong', u'corrAns': u'down', u'letterColor': u'green'}, {u'text': u'green', u'congruent': u'cong', u'corrAns': u'down', u'letterColor': u'green'}, {u'text': u'green', u'congruent': u'incong', u'corrAns': u'down', u'letterColor': u'blue'}, {u'text': u'blue', u'congruent': u'incong', u'corrAns': u'right', u'letterColor': u'red'}, {u'text': u'blue', u'congruent': u'incong', u'corrAns': u'right', u'letterColor': u'green'}, {u'text': u'blue', u'congruent': u'cong', u'corrAns': u'right', u'letterColor': u'blue'}, {u'text': u'blue', u'congruent': u'cong', u'corrAns': u'right', u'letterColor': u'blue'}]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="trialTypesReverse.xlsx" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
@@ -228,8 +228,8 @@
     <Routine name="instruct"/>
     <LoopInitiator loopType="TrialHandler" name="trials">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[{u'text': u'red', u'congruent': u'cong', u'corrAns': u'left', u'letterColor': u'red'}, {u'text': u'red', u'congruent': u'cong', u'corrAns': u'left', u'letterColor': u'red'}, {u'text': u'red', u'congruent': u'incong', u'corrAns': u'down', u'letterColor': u'green'}, {u'text': u'red', u'congruent': u'incong', u'corrAns': u'right', u'letterColor': u'blue'}, {u'text': u'green', u'congruent': u'incong', u'corrAns': u'left', u'letterColor': u'red'}, {u'text': u'green', u'congruent': u'cong', u'corrAns': u'down', u'letterColor': u'green'}, {u'text': u'green', u'congruent': u'cong', u'corrAns': u'down', u'letterColor': u'green'}, {u'text': u'green', u'congruent': u'incong', u'corrAns': u'right', u'letterColor': u'blue'}, {u'text': u'blue', u'congruent': u'incong', u'corrAns': u'left', u'letterColor': u'red'}, {u'text': u'blue', u'congruent': u'incong', u'corrAns': u'down', u'letterColor': u'green'}, {u'text': u'blue', u'congruent': u'cong', u'corrAns': u'right', u'letterColor': u'blue'}, {u'text': u'blue', u'congruent': u'cong', u'corrAns': u'right', u'letterColor': u'blue'}]" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="trialTypes.xlsx" valType="str"/>
+      <Param name="conditions" updates="None" val="[{u'text': u'red', u'congruent': u'cong', u'corrAns': u'left', u'letterColor': u'red'}, {u'text': u'red', u'congruent': u'cong', u'corrAns': u'left', u'letterColor': u'red'}, {u'text': u'red', u'congruent': u'incong', u'corrAns': u'left', u'letterColor': u'green'}, {u'text': u'red', u'congruent': u'incong', u'corrAns': u'left', u'letterColor': u'blue'}, {u'text': u'green', u'congruent': u'incong', u'corrAns': u'down', u'letterColor': u'red'}, {u'text': u'green', u'congruent': u'cong', u'corrAns': u'down', u'letterColor': u'green'}, {u'text': u'green', u'congruent': u'cong', u'corrAns': u'down', u'letterColor': u'green'}, {u'text': u'green', u'congruent': u'incong', u'corrAns': u'down', u'letterColor': u'blue'}, {u'text': u'blue', u'congruent': u'incong', u'corrAns': u'right', u'letterColor': u'red'}, {u'text': u'blue', u'congruent': u'incong', u'corrAns': u'right', u'letterColor': u'green'}, {u'text': u'blue', u'congruent': u'cong', u'corrAns': u'right', u'letterColor': u'blue'}, {u'text': u'blue', u'congruent': u'cong', u'corrAns': u'right', u'letterColor': u'blue'}]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="trialTypesReverse.xlsx" valType="str"/>
       <Param name="endPoints" updates="None" val="[1, 2]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
