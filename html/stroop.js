@@ -147,7 +147,7 @@ function experimentInit() {
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
-    color: new util.Color([1, 1, 1]),  opacity: 1,
+    color: new util.Color('white'),  opacity: 1,
     depth: -1.0 
   });
   
@@ -533,7 +533,12 @@ function feedbackRoutineBegin(trials) {
     frameN = -1;
     routineTimer.add(1.000000);
     // update component parameters for each repeat
-    /* Syntax Error: Fix Python code */
+    if (resp.corr) {
+        msg = (("\u6b63\u786e! \u4f60\u7684\u53cd\u5e94\u65f6\u95f4\u662f" + resp.rt.toFixed(2)) + "\u79d2");
+    } else {
+        msg = "\u7cdf\u7cd5\uff0c\u6309\u9519\u4e86\uff01";
+    }
+    
     feedback_2.setText(msg);
     // keep track of which components have finished
     feedbackComponents = [];

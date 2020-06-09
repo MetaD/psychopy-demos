@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2020.1.2),
-    on Mon Jun  8 17:13:01 2020
+    on Mon Jun  8 18:13:16 2020
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -51,7 +51,7 @@ filename = _thisDir + os.sep + 'data' + os.sep + '%s_%s' % (expInfo['participant
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='/Users/mengdu/Repos/naodao/psychopy-stroop/stroop_lastrun.py',
+    originPath='/Users/mengdu/Repos/naodao/psychopy-stroopExtended/stroop_lastrun.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -106,14 +106,11 @@ resp = keyboard.Keyboard()
 feedbackClock = core.Clock()
 #msg variable just needs some value at start
 msg=''
-#!!!!!!!!!!!!!!!!!!!!!!!
-#!!!!!!!!!!!
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 feedback_2 = visual.TextStim(win=win, name='feedback_2',
     text='default text',
     font='Arial',
     pos=[0, 0], height=0.1, wrapWidth=None, ori=0, 
-    color=[1,1,1], colorSpace='rgb', opacity=1, 
+    color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
 
@@ -372,10 +369,10 @@ for thisPractice in practice:
     continueRoutine = True
     routineTimer.add(1.000000)
     # update component parameters for each repeat
-    if resp.corr:#stored on last run routine
-      msg="正确! 反应时=%.3f" %(resp.rt)
+    if (resp.corr): # stored on last run routine
+      msg = u"正确! 你的反应时间是" + "%.2f" % resp.rt + "秒";
     else:
-      msg="糟糕，按错了！"
+      msg = u"糟糕，按错了！"
     feedback_2.setText(msg)
     # keep track of which components have finished
     feedbackComponents = [feedback_2]
