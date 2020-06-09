@@ -111,7 +111,7 @@ function experimentInit() {
   instr1 = new visual.TextStim({
     win: psychoJS.window,
     name: 'instr1',
-    text: '在这个任务中，请忽略你看到的词汇本身，\n然后根据字的颜色在键盘上按这些键:\n看到红色的字按向左键\n看到绿色的字按向下键\n看到蓝色的字按向右键\n(按Esc键退出)\n\n现在我们先来练习一下\n按任意键开始',
+    text: '在这个任务中，请忽略你看到的词汇本身，\n然后根据字的颜色在键盘上按这些方向键:\n看到红色的字按向左键\n看到绿色的字按向下键\n看到蓝色的字按向右键\n(按Esc键退出)\n\n现在我们先来练习一下\n\n请把手放在键盘的方向键上，然后按任意键开始',
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
